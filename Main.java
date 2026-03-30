@@ -1,41 +1,36 @@
 import java.util.Scanner;
-public class Main {
-    public static void main(String[] args) {
+public class Main{
+    public static void main (String[] args){
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println(" Welcome to MessagingApp1!");
-        System.out.print("Enter your name: ");
+        System.out.print("Enter username: ");
         String username = scanner.nextLine();
 
-        boolean running =true;
+        int messageCounter = 1;
+        boolean running = true;
+
         while (running){
-            System.out.println("\nMenu - " + username);
-            System.out.println("1. Save message");
-            System.out.println("2. Receive messages");
-            System.out.println("3. Delete message");
-            System.out.println("4. Exit");
-            System.out.print("Choose an option: ");
+            System.out.println("1. Send Message");
+            System.out.println("2. Exit");
 
-            int choice =scanner.nextInt();
-            scanner.nextLine();// Consume newLine();
+            int choice = scanner.nextInt();
+            scanner.nextLine(); 
 
-            switch(choice){
-                case 1:
-                    System.out.print("Enter the message to save: ");
-                    break;
-                case 2:
-                    System.out.println("View messages selected.");
-                    break;
-                case 3:
-                    System.out.println("Exiting...");
-                    running = false;
-                    break;
-                default:
-                    System.out.println("Invalid option. Please try again.");
+            if(choice==1){
+                System.out.print("Enter number:");
+                String number = scanner.nextLine();
+
+                System.out.print("Enter message:");
+                String message = scanner.nextLine();
+
+                Message msg = new Message(message, number, messageCounter);
+
+                System.out.println("Message from " + username + " sent to " + msg.messageText);
+                messageCounter++;
+            } else {
+                running = false;
             }
         }
-        
-
         scanner.close();
     }
 }
