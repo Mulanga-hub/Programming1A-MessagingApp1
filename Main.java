@@ -1,36 +1,50 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+
 public class Main{
-    public static void main (String[] args){
+    public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter username: ");
-        String username = scanner.nextLine();
+        ArrayList<Message> messages = new ArrayList<>();
 
         int messageCounter = 1;
         boolean running = true;
 
-        while (running){
-            System.out.println("1. Send Message");
-            System.out.println("2. Exit");
+        while(running){
+            System.out.println("\n1.Sende Message");
+            System.out.println("2.View Messages");
+            System.out.println("3.Exit");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); 
+            scanner.nextLine();
 
-            if(choice==1){
+            if(choice ==1){
                 System.out.print("Enter number:");
                 String number = scanner.nextLine();
 
                 System.out.print("Enter message:");
-                String message = scanner.nextLine();
+                String text = scanner.nextLine();
 
-                Message msg = new Message(message, number, messageCounter);
+                Message message = new Message(text, number, messageCounter++);
+                messages.add(message);
 
-                System.out.println("Message from " + username + " sent to " + msg.messageText);
+                System.out.println("Message sent");
+
                 messageCounter++;
-            } else {
+
+                }else if(choice == 2){
+                    for (Message m : messages){
+                        System.out.println("To:" + m.recipientNumber + " - " + m.messageText);
+                        
+                    }
+
+
+            }else if(choice == 2){
                 running = false;
             }
-        }
-        scanner.close();
+      
+         }
+
+         scanner.close();
     }
 }
