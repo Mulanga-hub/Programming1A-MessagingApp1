@@ -11,7 +11,7 @@ public class Main{
         boolean running = true;
 
         while(running){
-            System.out.println("\n1.Sende Message");
+            System.out.println("\n1.Send Message");
             System.out.println("2.View Messages");
             System.out.println("3.Exit");
 
@@ -34,12 +34,11 @@ public class Main{
 
                 }else if(choice == 2){
                     for (Message m : messages){
-                        System.out.println("To:" + m.recipientNumber + " - " + m.messageText);
-                        
+                        System.out.println("Id: " + m.messageId + "|To:" + m.recipientNumber + "| Message:" +m.messageText);
                     }
 
 
-            }else if(choice == 2){
+            }else if(choice == 3){
                 running = false;
             }
       
