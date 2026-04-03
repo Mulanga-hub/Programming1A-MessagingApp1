@@ -10,6 +10,8 @@ public class Main {
         System.out.print("Enter username:");
         String username = scanner.nextLine();
 
+    
+
         boolean running = true;
         int messageCounter =1;
 
@@ -24,6 +26,11 @@ public class Main {
 
                 System.out.print("Enter message:");
                 String text = scanner.nextLine();
+
+                if (text.length() > 250) {
+                    System.out.println("Message is too long. Please limit to 250 characters.");
+                
+                }
 
                 Message message = new Message(text, number, messageCounter);
                 messages.add(message);
