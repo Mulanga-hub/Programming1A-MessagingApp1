@@ -42,11 +42,14 @@ public class Main {
 
 
             } else if (choice == 2) {
-                for (Message m : messages){
-                    System.out.println("ID:" +m.messageId + "|From:" + username + "|To:" + m.recipientNumber + "|Message:" + m.messageText);
-
+                if (messages.isEmpty()) {
+                    System.out.println("No messages to display.");
+                } else {
+                    for (Message m : messages) {
+                        System.out.println("ID:" + m.messageId + "|From:" + username + "|To:" + m.recipientNumber + "|Message:" + m.messageText);
+                    }
                 }
-            }else{
+            } else {
                 running = false;
             }
         }
