@@ -45,6 +45,9 @@ public class Main {
                 if (messages.isEmpty()) {
                     System.out.println("No messages to display.");
                 } else {
+
+                    System.out.println("Total messages sent: " + messages.size());
+                    
                     for (Message m : messages) {
                         System.out.println("ID:" + m.messageId + "|From:" + username + "|To:" + m.recipientNumber + "|Message:" + m.messageText);
                     }
