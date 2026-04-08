@@ -27,10 +27,13 @@ public class Main {
                 System.out.print("Enter message:");
                 String text = scanner.nextLine();
 
-                if (text.length() > 250) {
+                if(number.length() !=10){
+                  System.out.println("Invalid number Must be 10 digits.");  
+
+                }else if (text.length() > 250) {
                     System.out.println("Message is too long. Please limit to 250 characters.");
                 
-                }
+                }else{
 
                 Message message = new Message(text, number, messageCounter);
                 messages.add(message);
@@ -39,6 +42,8 @@ public class Main {
                 System.out.println("Total messages sent: " + messages.size());
 
                 messageCounter++;
+
+                }
 
 
             } else if (choice == 2) {
