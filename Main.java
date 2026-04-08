@@ -57,7 +57,9 @@ public class Main {
                         System.out.println("ID:" + m.messageId + "|From:" + username + "|To:" + m.recipientNumber + "|Message:" + m.messageText);
                     }
                 }
-            } else {
+            }else {
+                System.out.println("Total.messages sent: " + messages.size());
+                System.out.println("Goodbye!");
                 running = false;
             }
         }
