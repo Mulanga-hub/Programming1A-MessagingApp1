@@ -59,7 +59,7 @@ public class Main {
                 }
             }else {
                 System.out.println("Total.messages sent: " + messages.size());
-                System.out.println("Goodbye!");
+                System.out.println("Exiting program...");
                 running = false;
             }
         }
